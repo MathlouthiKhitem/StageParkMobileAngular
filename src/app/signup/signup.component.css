@@ -1,0 +1,43 @@
+.card {
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #999CF0 0%, #CCCAF3 100%);
+    /* Utilisation de linear-gradient pour appliquer le dégradé */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à la carte */
+    border-radius: 10px; /* Arrondit les coins de la carte */
+  }
+  
+  .card label,
+  .card h1,
+  .card h6 {
+    color: #fff;
+  }
+  
+  label {
+    color: #fff;
+  }
+  
+  .card button.btn-primary {
+    background-color: #4448AE; /* Couleur de fond du bouton */
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card button.btn-primary:hover {
+    background-color: #3C3F98; /* Couleur de fond du bouton au survol */
+  }
+  
+  .card a {
+    margin-top: 10px; /* Ajoute une marge en haut de l'étiquette */
+    display: block; /* Pour que la marge s'applique correctement */
+  }
+  

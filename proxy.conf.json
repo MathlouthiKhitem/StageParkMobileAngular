@@ -1,0 +1,10 @@
+{
+    "/Backend/users/signin": {
+      "target": "http://localhost:8080",
+      "secure": true,
+      "pathRewrite": {
+      "^/Backend/users/signin": ""
+    },
+      "changeOrigin": true
+    }
+  }

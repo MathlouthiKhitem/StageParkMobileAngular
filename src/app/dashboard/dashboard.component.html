@@ -1,0 +1,33 @@
+<!-- zone.component.html -->
+<form class="zone-form" (ngSubmit)="addZone()">
+    <div class="form-group">
+      <label for="nameZone">Zone Name</label>
+      <input type="text" id="nameZone" name="nameZone" [(ngModel)]="zoneData.nameZone" placeholder="Zone Name">
+    </div>
+    <div class="form-group">
+        <label for="hourPrice">Hour Price</label>
+        <select id="hourPrice" name="hourPrice" [(ngModel)]="zoneData.hourPrice">
+          <option value="1">1dt</option>
+          <option value="2">2dt</option>
+          <option value="3">3dt</option>
+          <option value="4">4dt</option>
+          <option value="5">5dt</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    <div class="form-group">
+      <label for="ville">Ville</label>
+      <input type="text" id="ville" name="ville" [(ngModel)]="zoneData.ville" placeholder="Ville">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="zoneData.description" placeholder="Description"></textarea>
+
+    </div>
+    <div class="form-group">
+        <label for="nmeroParking">nmeroParking</label>
+        <input type="text" id="nmeroParking" name="nmeroParking" [(ngModel)]="zoneData.nmeroParking" placeholder="numeroParking">
+      </div>
+    <button type="submit" class="submit-button">Add Zone</button>
+  </form>
+  

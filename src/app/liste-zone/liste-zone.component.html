@@ -1,0 +1,56 @@
+<!-- Your main component HTML -->
+<div class="card" style="width: 1900px">
+    <h3>Listing Zone</h3>
+    <div class="card-header">
+      <a class="btn btn-success" routerLink="/dashboard">Create New zone [+]</a>
+    </div>
+  
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="bg-dark text-white">
+          <tr>
+            <td>Zone Id</td>
+            <td>Zone Name</td>
+            <td>hourPrice</td>
+            <td>ville</td>
+            <td>description</td>
+            <td>numeroParking</td>
+            <td>Action</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of zone">
+            <td>{{item.id}}</td>
+            <td>{{item.nameZone}}</td>
+            <td>{{item.hourPrice }}Dt</td>
+            <td>{{item.ville}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.nmeroParking}}</td>
+            <td style="width: 30%">
+                <a type="button" class="btn btn-outline-secondary">Edit</a> ||
+                <a type="button" class="btn btn-outline-danger">Delete</a> |
+                <a type="button" class="btn btn-outline-warning"(click)="openDialog(item.id)">Affect</a>
+              </td>
+              <app-dialog *ngIf="showDialog" [zoneId]="selectedZoneId"></app-dialog>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  <div class="center-element">
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal content -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="d('Cross click')">Close</button>
+      </div>
+    </ng-template>
+  </div>
+  

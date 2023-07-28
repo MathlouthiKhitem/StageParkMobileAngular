@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div>
+            <h1 class="card-body text-center">Login</h1>
+            <h6 class="card-body text-center">Please enter email & password!</h6>
+            <!-- Pass the form inputs 'username' and 'password' to the submit() function -->
+            <form #f="ngForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <div></div>
+                <!-- Use a template reference variable 'l' for the email input and bind it to the 'email' property of the 'user' object -->
+                <input type="email" class="form-control" id="email" [(ngModel)]="newUser.email" [ngModelOptions]="{standalone: true}">
+
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <div></div>
+                <!-- Use a template reference variable 'password' for the password input and bind it to the 'password' property of the 'user' object -->
+                <input type="password" class="form-control" id="password" [(ngModel)]="newUser.password" [ngModelOptions]="{standalone: true}">
+
+              </div>
+              <div></div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <div></div>
+             
+              <!-- Change the button type from "button" to "submit" and disable it when the form is invalid -->
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Login</button>
+            </form>
+            <a style="color:#4448AE;margin-top: 10px" routerLink="/signup">New user? Click to signup!!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

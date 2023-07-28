@@ -1,0 +1,7 @@
+/* Add this CSS in your styles.css or styles.scss file */
+.center-element {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* You can adjust this value as per your requirement */
+  }
