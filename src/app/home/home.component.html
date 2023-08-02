@@ -11,7 +11,7 @@
             <div class="profile-img bg-img" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg)"></div>
           
         </div>
-
+      
         <div class="side-menu">
             <ul>
                 <li>
@@ -100,32 +100,31 @@
         </div>
         
         <div class="page-content">
-        
             <div class="analytics">
                 <div class="zone-container" *ngFor="let zoneData of parkingData | keyvalue">
-                    <div class="card">
-                      <div class="card-head">
-                        <div>Nom Zone:</div>
-                        <h3>{{ zoneData.key }}</h3>
-                        
-                        <span class="las la-shopping-cart"></span>
-                      </div>
-                      <div class="card-progress">
-                      
-                        <small>Monthly revenue growth</small>
-                        <div class="card-indicator">
-                          <div class="indicator three" [style.width.%]="calculateProgressWidth(zoneData.value)"></div>
-                        </div>
-                      </div>
-                      <ul>
-                        <div class="parking-data-container" *ngFor="let parkingData of zoneData.value | keyvalue">
-                            <p>{{ parkingData.key }}: {{ parkingData.value }}</p>
-                          </div>
-                        
-                      </ul>
+                  <div class="card">
+                    <div class="card-head">
+                      <div>Nom Zone:</div>
+                      <h3>{{ zoneData.key }}</h3>
+                      <span class="las la-shopping-cart"></span>
                     </div>
+                    <div class="card-progress">
+                      <small>Monthly revenue growth</small>
+                      <div class="card-indicator">
+                        <!-- Corrected the usage of the calculateProgressWidth() function here -->
+                        <div class="indicator three" [style.width.%]="calculateProgressWidth(getSessionCount(zoneData.value))"></div>
+                      </div>
+                    </div>
+                    <ul>
+                      <!-- Now, you can loop over the individual parking data for each zoneData -->
+                      <div class="parking-data-container" *ngFor="let parkingData of zoneData.value | keyvalue">
+                        <p>{{ parkingData.key }}: {{ parkingData.value }}</p>
+                      </div>
+                    </ul>
                   </div>
-            </div>
+                </div>
+              </div>
+              
 
             <!-- <div class="page-content">
                 <div class="analytics">

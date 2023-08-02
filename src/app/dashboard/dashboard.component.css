@@ -1,11 +1,15 @@
 .zone-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    background-color: #f8f8f8; /* Add a light background color to the form */
+  border: none;
+    width: 400px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #999CF0 0%, #CCCAF3 100%);
+    /* Utilisation de linear-gradient pour appliquer le dégradé */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre à la carte */
+    border-radius: 10px; /* Arrondit les coins de la carte */
   }
   
   .form-group {
@@ -54,7 +58,7 @@ select {
     pointer-events: none;
   }
   .submit-button {
-    background-color: #007bff;
+    background-color: #6c6fcb;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -67,3 +71,11 @@ select {
   .submit-button:hover {
     background-color: #0056b3; /* Change the background color on hover */
   }
+  .bg-img {
+    /* Set the height and other styles for the background image */
+    height: 900px; /* Adjust the height as needed */
+    background-size: cover; /* Set the background image size to cover the entire container */
+    background-position: left bottom; /* Position the background image to the left and bottom */
+  }
+  
+  

@@ -1,5 +1,9 @@
-<!-- zone.component.html -->
+<div>
+  <div class="bg-img" style="background-image: url('assets/application-pour-smartphone-stationnement-petite-femme-recherche-parking-pour-parc-automobile-parking-public_501813-832.jpg')"></div>
+</div>
+
 <form class="zone-form" (ngSubmit)="addZone()">
+  <h1>New Zone</h1>
     <div class="form-group">
       <label for="nameZone">Zone Name</label>
       <input type="text" id="nameZone" name="nameZone" [(ngModel)]="zoneData.zoneTitle" placeholder="Zone Name">

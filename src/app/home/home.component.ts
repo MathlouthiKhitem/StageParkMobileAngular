@@ -62,10 +62,18 @@ this. getParkingData();
   //       }
   //     );
   // }
-  calculateProgressWidth(zoneValue: any): string {
-    const progressPercentage = parseFloat(zoneValue);
+  calculateProgressWidth(sessionCount: number): string {
+    // Implement your calculation logic here to get the progress width based on 'sessionCount'
+    // For example, you can set a maximum session count and calculate the percentage based on that
+    const maxSessionCount = 100; // Change this to your desired maximum session count
+    const progressPercentage = (sessionCount / maxSessionCount) * 100;
     return progressPercentage + '%';
   }
+  // In your component
+getSessionCount(parkingData: any): number {
+  return parseInt(parkingData['Session Count'], 2);
+}
+
   fetchAgentZone() {
     this.authService.getUsers(this.users.id).subscribe(
       (zoneData: any) => {
@@ -79,18 +87,41 @@ this. getParkingData();
       }
     );
   }
+  // getParkingData(): void {
+  //   this.authService.getMaxDurationPerSession().subscribe(
+  //     data => {
+  //       this.parkingData = data;
+  //       console.log(this.parkingData); // You can process the data as per your requirements
+  //     },
+  //     error => {
+  //       console.error('Error fetching parking data:', error);
+  //     }
+  //   );
+  // }
+  // responsivemenu 
+  
   getParkingData(): void {
     this.authService.getMaxDurationPerSession().subscribe(
       data => {
         this.parkingData = data;
         console.log(this.parkingData); // You can process the data as per your requirements
+
+        // Calculate progress width based on "Session Count" value
+        for (const zoneTitle in this.parkingData) {
+          if (this.parkingData.hasOwnProperty(zoneTitle)) {
+            const parkingInfo = this.parkingData[zoneTitle];
+            const sessionCount = parseInt(parkingInfo['Session Count'], 10);
+            const progressWidth = this.calculateProgressWidth(sessionCount);
+            // Now you can use the 'progressWidth' to set the width of your progress element in your HTML template
+            console.log(`Zone: ${zoneTitle}, Session Count: ${sessionCount}, Progress Width: ${progressWidth}`);
+          }
+        }
       },
       error => {
         console.error('Error fetching parking data:', error);
       }
     );
   }
-  // responsivemenu 
   responsiveMenu:any;
   // responsivemaincontent
   responsiveContent:any;

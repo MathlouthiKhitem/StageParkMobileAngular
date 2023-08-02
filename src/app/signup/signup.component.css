@@ -1,7 +1,7 @@
 .card {
     border: none;
-    width: 500px;
-    padding: 40px;
+    width: 400px;
+    padding: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,4 +40,9 @@
     margin-top: 10px; /* Ajoute une marge en haut de l'étiquette */
     display: block; /* Pour que la marge s'applique correctement */
   }
-  
+  .bg-img {
+    /* Set the height and other styles for the background image */
+    height: 900px; /* Adjust the height as needed */
+    background-size: cover; /* Set the background image size to cover the entire container */
+    background-position: left bottom; /* Position the background image to the left and bottom */
+  }
