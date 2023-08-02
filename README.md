@@ -22,7 +22,7 @@ steps:
 <!--![App Screenshot](https://github.com/MathlouthiKhitem/StageParkMobileAngular/blob/main/sereenshots/Screenshot%202023-08-02%20at%201.56.53%20PM.png)-->
 <div style="display: flex; flex-wrap: wrap;">
 
-<img src="https://github.com/MathlouthiKhitem/StageParkMobileAngular/blob/main/sereenshots/Screenshot%202023-08-02%20at%201.56.53%20PM.png" width="200" height="400">
+<img src="https://github.com/MathlouthiKhitem/StageParkMobileAngular/blob/main/sereenshots/Screenshot%202023-08-02%20at%201.56.53%20PM.png" width="30" height="200">
 </div>
 
 ## Development server
