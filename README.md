@@ -18,6 +18,12 @@ steps:
 -clone the project inside a new folder call it for example "ParkMobileAgent"
 -clone this project ( containing the back server of the app ) : https://github.com/MathlouthiKhitem/ParkMobilebackAdmin
 
+## Screenshots
+<!--![App Screenshot](https://github.com/MathlouthiKhitem/StageParkMobileAngular/blob/main/sereenshots/Screenshot%202023-08-02%20at%201.56.53%20PM.png)-->
+<div style="display: flex; flex-wrap: wrap;">
+
+<img src="https://github.com/MathlouthiKhitem/StageParkMobileAngular/blob/main/sereenshots/Screenshot%202023-08-02%20at%201.56.53%20PM.png" width="200" height="400">
+</div>
 
 ## Development server
 
