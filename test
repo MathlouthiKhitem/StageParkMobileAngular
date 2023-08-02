@@ -1,0 +1,40 @@
+Classe Tache:
+    Propriétés:
+        date_debut
+        date_fin
+    
+    Constructeur(date_debut):
+        this.date_debut = date_debut
+        this.date_fin = date_debut + 30 minutes
+
+Fonction temps_de_deplacement(tache1, tache2):
+  x1, y1 = tache1.adresse_x, tache1.adresse_y
+    x2, y2 = tache2.adresse_x, tache2.adresse_y
+    vitesse_deplacement = 1
+    distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+    temps_deplacement = distance / vitesse_deplacement
+
+    return temps_deplacement
+
+Fonction trouver_trajets_optimises(liste_taches):
+    Trier liste_taches par date de début décroissante
+    trajets = ListeVide
+    trajet_actuel = ListeVide
+    temps_actuel = liste_taches[0].date_debut  
+    trajet_actuel.ajouter(liste_taches[0])  
+    
+    Pour i allant de 1 à taille(liste_taches) - 1:
+        tache = liste_taches[i]
+        date_debut_trajet_suivant = trajet_actuel[-1].date_fin + temps_de_deplacement(trajet_actuel[-1], tache) + 30 minutes
+        
+        Si date_debut_trajet_suivant <= tache.date_debut:
+            trajet_actuel.ajouter(tache)
+        Sinon:
+            Ajouter trajet_actuel à trajets
+            trajet_actuel = ListeVide
+            trajet_actuel.ajouter(tache)  
+    
+    Ajouter trajet_actuel à trajets  
+    
+    Retourner trajets
+Fin Fonction

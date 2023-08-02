@@ -1,9 +1,9 @@
 export class Zone {
     Id: string;
-    nameZone: string;
+    zoneTitle: string;
     hourPrice: string;
     ville: string;
     description:string;
-    nmeroParking:string;
+    numeroParking:string;
  
     }

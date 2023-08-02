@@ -102,62 +102,43 @@
         <div class="page-content">
         
             <div class="analytics">
-
-                <div class="card">
-                    <div class="card-head">
-                        <h2>107,200</h2>
-                        <span class="las la-user-friends"></span>
-                    </div>
-                    <div class="card-progress">
-                        <small>User activity this month</small>
-                        <div class="card-indicator">
-                            <div class="indicator one" style="width: 60%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-head">
-                        <h2>340,230</h2>
-                        <span class="las la-eye"></span>
-                    </div>
-                    <div class="card-progress">
-                        <small>Page views</small>
-                        <div class="card-indicator">
-                            <div class="indicator two" style="width: 80%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-head">
-                        <h2>$653,200</h2>
+                <div class="zone-container" *ngFor="let zoneData of parkingData | keyvalue">
+                    <div class="card">
+                      <div class="card-head">
+                        <div>Nom Zone:</div>
+                        <h3>{{ zoneData.key }}</h3>
+                        
                         <span class="las la-shopping-cart"></span>
-                    </div>
-                    <div class="card-progress">
+                      </div>
+                      <div class="card-progress">
+                      
                         <small>Monthly revenue growth</small>
                         <div class="card-indicator">
-                            <div class="indicator three" style="width: 65%"></div>
+                          <div class="indicator three" [style.width.%]="calculateProgressWidth(zoneData.value)"></div>
                         </div>
+                      </div>
+                      <ul>
+                        <div class="parking-data-container" *ngFor="let parkingData of zoneData.value | keyvalue">
+                            <p>{{ parkingData.key }}: {{ parkingData.value }}</p>
+                          </div>
+                        
+                      </ul>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-head">
-                        <h2>47,500</h2>
-                        <span class="las la-envelope"></span>
-                    </div>
-                    <div class="card-progress">
-                        <small>New E-mails received</small>
-                        <div class="card-indicator">
-                            <div class="indicator four" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
-
+                  </div>
             </div>
 
-
+            <!-- <div class="page-content">
+                <div class="analytics">
+                  <div class="zone-container" *ngFor="let zoneData of parkingData | keyvalue">
+                    <h3>{{ zoneData.key }}</h3>
+                    <div class="parking-data-container" *ngFor="let parkingData of zoneData.value | keyvalue">
+                      <p>{{ parkingData.key }}: {{ parkingData.value }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              
+              
             <div class="records table-responsive">
 
                 <div class="record-header">
@@ -182,30 +163,32 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th><span class="las la-sort"></span> CLIENT</th>
-                                <th><span class="las la-sort"></span> TOTAL</th>
-                                <th><span class="las la-sort"></span> ISSUED DATE</th>
-                                <th><span class="las la-sort"></span> BALANCE</th>
+                                <th><span class="las la-sort"></span> agent</th>
+                                <th><span class="las la-sort"></span> IdAgent</th>
+                                <th><span class="las la-sort"></span>  FirstName</th>
+                                <th><span class="las la-sort"></span> LastName</th>
+                                <th><span class="las la-sort"></span> Email</th>
                                 <th><span class="las la-sort"></span> ACTIONS</th>
                             </tr>
                      
-                          <tbody>
-                            <tr *ngFor="let user of users">
-                                <td>#5033</td>
-                                <td>
+                            <tbody>
+                                <tr *ngFor="let user of users">
+                                  <td>#5033</td>
+                                  <td>
                                     <div class="client">
-                                        <div class="profile-img bg-img" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg)"></div>
-                                     
+                                      <div class="profile-img bg-img" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg)"></div>
                                     </div>
-                                </td>
-                              <td>{{ user.id }}</td>
-                              <td>{{ user.firstName }}</td>
-                              <td>{{ user.lastName }}</td>
-                              <td>{{ user.email }}</td>
-                            </tr>
-                         
-                          </tbody>
-                      
+                                  </td>
+                                  <td>{{ user.id }}</td>
+                                  <td>{{ user.firstName }}</td>
+                                  <td>{{ user.lastName }}</td>
+                                  <td>{{ user.email }}</td>
+                                  <div *ngIf="agentZone">
+                                    <p><strong>Zone Name:</strong> {{ agentZone.nomZone }}</p>
+                                  </div>
+                                </tr>
+                              </tbody>
+                              
   
                     </table>
                 </div>

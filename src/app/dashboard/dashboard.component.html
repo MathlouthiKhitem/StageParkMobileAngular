@@ -2,7 +2,7 @@
 <form class="zone-form" (ngSubmit)="addZone()">
     <div class="form-group">
       <label for="nameZone">Zone Name</label>
-      <input type="text" id="nameZone" name="nameZone" [(ngModel)]="zoneData.nameZone" placeholder="Zone Name">
+      <input type="text" id="nameZone" name="nameZone" [(ngModel)]="zoneData.zoneTitle" placeholder="Zone Name">
     </div>
     <div class="form-group">
         <label for="hourPrice">Hour Price</label>
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group">
         <label for="nmeroParking">nmeroParking</label>
-        <input type="text" id="nmeroParking" name="nmeroParking" [(ngModel)]="zoneData.nmeroParking" placeholder="numeroParking">
+        <input type="text" id="nmeroParking" name="nmeroParking" [(ngModel)]="zoneData.numeroParking" placeholder="numeroParking">
       </div>
     <button type="submit" class="submit-button">Add Zone</button>
   </form>

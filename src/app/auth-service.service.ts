@@ -66,5 +66,21 @@ export class AuthServiceService {
 
     return this.http.post<any>(url, data, httpOptions);
   }
+  getUsers(agentId: string): Observable<any[]> {
+    const apiUrl= 'http://localhost:8080/Backend/admin/agents';
+    const url = `${apiUrl}/${agentId}/zone`;
 
+
+    return this.http.get<any[]>(url);
+  }
+  getZoneTitlesWithMultipleOccurrences(): Observable<Map<string, string[]>> {
+    const apiUrl= 'http://localhost:8080/Backend/admin';
+    const url = `${apiUrl}/zone-titles-multiple-occurrences`;
+    return this.http.get<Map<string, string[]>>(url);
+  }
+
+  getMaxDurationPerSession(): Observable<Map<string, Map<string, string>>> {
+    const apiUrl= 'http://localhost:8080/Backend/admin';
+    return this.http.get<Map<string, Map<string, string>>>(`${apiUrl}/max-durations`);
+  }
 }

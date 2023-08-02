@@ -35,9 +35,8 @@ export class ListeZoneComponent implements OnInit {
         console.error('Error fetching users:', error);
       }
     );
-  
   }
 
- 
+
   
 }

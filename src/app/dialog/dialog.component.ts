@@ -14,6 +14,9 @@ export class DialogComponent implements OnInit {
   constructor(private authService: AuthServiceService,private http: HttpClient) { }
   users: User[];
   selectedEmail: string; 
+  userEmail: string;
+
+  userIds: string[];
 
   ngOnInit(): void {
     this.authService.getUsersByType2().subscribe(
@@ -52,5 +55,26 @@ export class DialogComponent implements OnInit {
       }
     );
   }
-  
+  // getUserIdsByEmail(email: string) {
+  //   const baseUrl = 'http://localhost:8080/Backend/admin'; // Replace 'YOUR_API_URL' with the actual URL of your backend API
+
+  //   const url = `${baseUrl}/${this.users}`;
+  //   console.log('users:', this.users);
+
+  //   return this.http.get<string[]>(url);
+  // }
+  // searchByEmail() {
+  //   this.getUserIdsByEmail(this.userEmail)
+  //     .subscribe(
+  //       (data) => {
+  //         this.userIds = data;
+  //         console.log('Response:', this.userIds);
+
+  //       },
+  //       (error) => {
+  //         console.error(error);
+  //         // Handle error if necessary
+  //       }
+  //     );
+  // }
 }
